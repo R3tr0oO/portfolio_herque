@@ -1,0 +1,344 @@
+:root{
+    /* Utilisation de variables CSS, afin de definir couleur des boutons, taille de polices, etc... */
+    --back: #121277;
+    --primary: #fef100 ; 
+    --shadow-primary: #40d6f4;
+    --color: #01012b; 
+    --font-size: 26px;
+    --label-size: 9px;
+    --shadow-secondary: #ff0909;
+    --secondary: #f1edb2;
+    --neon1: #fff;
+    --neon2: #6adbf2;
+    
+    /* Utilisation de variables CSS, afin de créer les frames de l'animation du bouton */
+    --clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+    --border: 4px;
+    --shimmy-distance: 5;
+    --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+    --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+    --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+    --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+    --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%); 
+  }
+  
+  
+    /* Style général du site */
+  
+  @font-face {
+    /* Style de la police d'écriture */
+    font-family: Cyber;
+    src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf"); /* Importation d'une police d'écriture "Cyberpunk" */
+    font-display: swap; 
+  } 
+        
+  .body {
+    /* Style général du corps */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Cyber', sans-serif;
+    background: var(--back);
+    width: 100%; 
+    position: relative;
+  }
+    
+  .hr {
+    /* Style du hr */
+    border:none;
+    height: 20px;
+    width: 90%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid cyan;
+    box-shadow: 0 20px 20px -20px aqua;
+    margin: -50px auto 10px; 
+  }
+  
+  .a {
+    /* Pour que le lien ne soit plus surligné */
+    text-decoration: none;
+    color: var(--neon1);
+  }
+  
+  
+    /* Répartition et squelette du site */
+  
+  .conteneur-general{
+    /* Création d'un conteneur pour la répartition des éléments */
+    padding: 15px;
+    margin: 25px;
+    height: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px; 
+  }
+  
+  .conteneur-table {  
+    /* Création d'un conteneur pour partitionner les boutons */
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:  auto;
+    grid-gap: 40px;
+    padding: 15px;
+    margin: 25px;
+    height: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px; 
+  }
+
+  .conteneur-footer {  
+    /* Création d'un footer */
+    display: flex;
+    padding: 15px;
+    margin: 25px;
+    height: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px; 
+  }
+  
+  
+    /* Création du style des néons */
+  
+  .effetneonHeader {
+    /* Effet Néon header*/
+    font-size: 3rem;
+    text-align: center;
+    color: var(--neon1);
+    text-shadow:
+        0 0 7px var(--neon1),
+        0 0 42px var(--neon2),
+        0 0 77px var(--neon2),
+        0 0 100px var(--neon2);
+    animation: lumieres 1s infinite linear; /* Appel de la variation de luminosité */
+  }
+
+  .effetneon {
+    /* Effet Néon */
+    font-size: 1rem;
+    text-align: center;
+    color: var(--neon1);
+    text-shadow:
+        0 0 7px var(--neon1),
+        0 0 42px var(--neon2),
+        0 0 77px var(--neon2),
+        0 0 100px var(--neon2);
+  }
+
+  .effetneonFooter {
+    /* Effet Néon footer */
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--neon1);
+    text-shadow:
+        0 0 7px var(--neon1),
+        0 0 42px var(--neon2),
+        0 0 77px var(--neon2),
+        0 0 100px var(--neon2);
+  }
+  
+  @keyframes lumieres {
+    /* Effet Néon: variation de luminosité */
+    0%{
+        text-shadow:
+            0 0 7px var(--neon1),
+            0 0 42px var(--neon2),
+            0 0 77px var(--neon2),
+            0 0 100px var(--neon2);
+    }
+   50%{
+        text-shadow:
+            0 0 7px var(--neon1),
+            0 0 32px var(--neon2),
+            0 0 87px var(--neon2),
+            0 0 120px var(--neon2);
+    }
+  }
+  
+  
+  /* Création du style des boutons */
+  
+  .body .cybr-btn + .cybr-btn {
+    /* Marge verticale appliquée */
+    margin-top: 2rem; 
+  } 
+  
+  .cybr-btn {
+    /* Style général */
+    font-family: 'Cyber', sans-serif;
+    color: var(--color);
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: var(--font-size);
+    outline: transparent;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 700;
+    border: 0;
+    min-width: 300px;
+    height: 75px;
+    line-height: 75px;
+    transition: background 0.2s;
+  }
+   
+  .cybr-btn:hover {
+    /* Animation hover */
+    color: var(--secondary);
+  }
+  
+  .cybr-btn:active {
+    /* Animation active */
+    color: var(--secondary);
+  }
+  
+  .cybr-btn:after, .cybr-btn:before {
+    /* Marge verticale appliquée */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: var(--clip);
+    z-index: -1;
+  }
+  
+  .cybr-btn:before {
+    /* Les différentes animations appliquées sur les boutons */
+    background: var(--shadow-primary);
+    transform: translate(var(--border), 0);
+  }
+  
+  .cybr-btn:after {
+    background: var(--primary);
+  }
+  
+  .cybr-btn__tag {
+    position: absolute;
+    padding: 1px 4px;
+    letter-spacing: 1px;
+    line-height: 1;
+    bottom: -5%;
+    right: 5%;
+    font-weight: normal;
+    color: #05d9e8;
+    font-size: var(--label-size);
+  }
+  
+  .cybr-btn__glitch {
+    position: absolute;
+    top: calc(var(--border) * -1);
+    left: calc(var(--border) * -1);
+    right: calc(var(--border) * -1);
+    bottom: calc(var(--border) * -1);
+    background: var(--shadow-primary);
+    text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+    clip-path: var(--clip);
+    animation: glitch 2s infinite;
+    display: none;
+  }
+  
+  .cybr-btn:hover .cybr-btn__glitch {
+    display: block;
+  }
+  
+  .cybr-btn__glitch:before {
+    content: '';
+    position: absolute;
+    top: calc(var(--border) * 1);
+    right: calc(var(--border) * 1);
+    bottom: calc(var(--border) * 1);
+    left: calc(var(--border) * 1);
+    clip-path: var(--clip);
+    background: var(--primary);
+    z-index: -1;
+  }
+  
+  @keyframes glitch {
+    /* Création de la suite de frames, permettant une animation "Glitch", en fonction du temps de survol par la souris */
+    0% {
+      clip-path: var(--clip-one);
+    }
+    2%, 8% {
+      clip-path: var(--clip-two);
+      transform: translate(calc(var(--shimmy-distance) * -1%), 0); 
+    }
+    6% {
+      clip-path: var(--clip-two);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    9% {
+      clip-path: var(--clip-two);
+      transform: translate(0, 0);
+    }
+    10% {
+      clip-path: var(--clip-three);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    13% {
+      clip-path: var(--clip-three);
+      transform: translate(0, 0);
+    }
+    14%, 21% {
+      clip-path: var(--clip-four);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    25% {
+      clip-path: var(--clip-five);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    30% {
+      clip-path: var(--clip-five);
+      transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+    }
+    35%, 45% {
+      clip-path: var(--clip-six);
+      transform: translate(calc(var(--shimmy-distance) * -1%));
+    }
+    40% {
+      clip-path: var(--clip-six);
+      transform: translate(calc(var(--shimmy-distance) * 1%));
+    }
+    50% {
+      clip-path: var(--clip-six);
+      transform: translate(0, 0);
+    }
+    55% {
+      clip-path: var(--clip-seven);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    60% {
+      clip-path: var(--clip-seven);
+      transform: translate(0, 0);
+    }
+    31%, 61%, 100% {
+      clip-path: var(--clip-four);
+    }
+  }
+  
+
+  /* Création du style des skills bar */
+
+  .skills {
+    text-align: right; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    color: var(--color); /* White text color */
+  }
+  
+  .html { width: 90%; background-color: var(--neon2); } 
+  .css { width: 80%; background-color: var(--neon2); }
+  .js { width: 50%; background-color: var(--neon2); } 
+  .php { width: 70%; background-color: var(--neon2); } 
+  .Csharp { width: 50%; background-color: var(--neon2); }
+  .python { width: 70%; background-color: var(--neon2); }
+  .java { width: 55%; background-color: var(--neon2); }
+
+  
