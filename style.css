@@ -116,7 +116,6 @@
         0 0 42px var(--neon2),
         0 0 77px var(--neon2),
         0 0 100px var(--neon2);
-    animation: lumieres 1s infinite linear; /* Appel de la variation de luminosité */
   }
 
   .effetneon {
@@ -143,25 +142,7 @@
         0 0 100px var(--neon2);
   }
   
-  @keyframes lumieres {
-    /* Effet Néon: variation de luminosité */
-    0%{
-        text-shadow:
-            0 0 7px var(--neon1),
-            0 0 42px var(--neon2),
-            0 0 77px var(--neon2),
-            0 0 100px var(--neon2);
-    }
-   50%{
-        text-shadow:
-            0 0 7px var(--neon1),
-            0 0 32px var(--neon2),
-            0 0 87px var(--neon2),
-            0 0 120px var(--neon2);
-    }
-  }
-  
-  
+   
   /* Création du style des boutons */
   
   .body .cybr-btn + .cybr-btn {
